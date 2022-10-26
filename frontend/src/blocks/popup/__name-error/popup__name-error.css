@@ -1,0 +1,13 @@
+.popup__name-error {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 10px;
+  color: #FF0000;
+  visibility: hidden;
+}
+
+.popup__name-error_active {
+  visibility: visible;
+}

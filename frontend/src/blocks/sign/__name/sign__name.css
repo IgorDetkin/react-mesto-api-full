@@ -1,0 +1,17 @@
+.sign__name{
+    background: none;
+    width: 100%;
+    padding: 0 0 11px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    font-size: 14px;
+    line-height: 17px;
+    border: none;
+    border-bottom: 2px solid white;
+}
+
+.sign__name:focus {
+    outline: none;
+  }

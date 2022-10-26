@@ -1,0 +1,6 @@
+.sign__form-field{
+    display: flex;
+    flex-direction: column;
+    /* height: 44px; */
+    margin-bottom: 27px;
+}
