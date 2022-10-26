@@ -8,6 +8,7 @@ const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./middlewares/errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/Logger');
+const { cors } = require('./middlewares/cors');
 
 const { PORT = 3000 } = process.env;
 
@@ -19,6 +20,8 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 });
 
 const regex = /(https?:\/\/)(www\.)?\S{2,}\.\S{2,}?/;
+
+app.use(cors);
 
 app.use(requestLogger);
 
@@ -118,3 +121,5 @@ app.listen(PORT, () => {
 //   #Тут будут настройки фронта
 //    }
 // }
+
+// chmod +x /home/devopsina/react-mesto-api-full/frontend/build
