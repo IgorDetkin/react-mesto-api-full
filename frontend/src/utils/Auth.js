@@ -2,7 +2,7 @@
 export const baseUrl = 'https://api.mesto.learnproject.nomoredomains.icu';
 // export const baseUrl = 'http://localhost:3000';
 
-const token = localStorage.getItem('jwt');
+// const token = localStorage.getItem('jwt');
 
 function checkResponse(res) {
   if (res.ok) {
@@ -13,7 +13,7 @@ function checkResponse(res) {
 
 export const register = ({email, password}) => {
     return fetch(`${baseUrl}/signup`, {
-      // credentials:'include',
+      credentials:'include',
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -27,7 +27,7 @@ export const register = ({email, password}) => {
 
 export const authorize = ({email, password}) => {
     return fetch(`${baseUrl}/signin`, {
-      // credentials:'include',
+      credentials:'include',
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -44,9 +44,9 @@ export const authorize = ({email, password}) => {
 
 
   export function getInfo () {
-    // const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem('jwt');
         return fetch(`${baseUrl}/users/me`, {
-          // credentials:'include',
+          credentials:'include',
           method: 'GET',
           headers: {
             // 'Accept': 'application/json',
