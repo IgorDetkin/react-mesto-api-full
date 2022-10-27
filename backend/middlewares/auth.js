@@ -6,12 +6,13 @@ module.exports = (req, res, next) => {
   if (!authorization || !authorization.startsWith('Bearer ')) {
     throw new LoginError('Необходима авторизация');
   }
+  const { NODE_ENV, JWT_SECRET } = process.env;
 
   const token = authorization.replace('Bearer ', '');
   let payload;
 
   try {
-    payload = jwt.verify(token, 'some-secret-key');
+    payload = jwt.verify(token, NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key');
   } catch (err) {
     next(new LoginError('Необходима авторизация'));
   }
