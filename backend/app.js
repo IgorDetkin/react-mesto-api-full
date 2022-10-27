@@ -1,8 +1,8 @@
-// const path = require('path');
-// require('dotenv').config({ path: path.join(__dirname, '.env') }); // ??????
-require('dotenv').config({ path: '/home/devopsin/.env' });
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') }); // ??????
+require('dotenv').config({ path: '/home/devopsina/.env' });
 // require('dotenv').config({ path: './middlewares/.env' });
-// require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 
 const app = express();
@@ -16,6 +16,7 @@ const { requestLogger, errorLogger } = require('./middlewares/Logger');
 const { cors } = require('./middlewares/cors');
 
 console.log(process.env.NODE_ENV); // production
+console.log(process.env.JWT_SECRET);
 
 const { PORT = 3000 } = process.env;
 
