@@ -1,5 +1,5 @@
-// const path = require('path');
-// require('dotenv').config({ path: path.join(__dirname, '.env') }); // ??????
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') }); // ??????
 // require('dotenv').config({ path: '/home/devopsina/.env' });
 const express = require('express');
 
@@ -13,7 +13,7 @@ const NotFoundError = require('./middlewares/errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/Logger');
 const { cors } = require('./middlewares/cors');
 
-// console.log(process.env.NODE_ENV); // production
+console.log(process.env.NODE_ENV); // production
 
 const { PORT = 3000 } = process.env;
 

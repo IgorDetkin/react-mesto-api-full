@@ -7,6 +7,8 @@ const ValidationError = require('../middlewares/errors/ValidationError');
 const NotFoundError = require('../middlewares/errors/NotFoundError');
 const LoginError = require('../middlewares/errors/LoginError');
 
+const { NODE_ENV, JWT_SECRET } = process.env; // пр15
+
 module.exports.getUsers = (req, res, next) => {
   User.find({})
     .then((users) => res.send({ data: users }))
@@ -119,8 +121,8 @@ module.exports.login = (req, res, next) => {
 
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
-      // console.log(user._id);
+      // const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'some-secret-key', { expiresIn: '7d' }); // пр15
       res.send({ token });
       // return res.send({ token });
     })
