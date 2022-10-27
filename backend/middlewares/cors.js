@@ -1,8 +1,8 @@
 const allowedCors = [
   'https://mesto.learnproject.nomoredomains.icu',
   'http://mesto.learnproject.nomoredomains.icu',
-  // 'localhost:3000',
-  'localhost:3001',
+  'http://localhost:3000',
+  'http://localhost:3001',
 ];
 
 const cors = ((req, res, next) => {
@@ -13,7 +13,7 @@ const cors = ((req, res, next) => {
 
   if (allowedCors.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
-    res.header('Access-Control-Allow-Credentials', true);
+    // res.header('Access-Control-Allow-Credentials', true);
   }
 
   if (method === 'OPTIONS') {

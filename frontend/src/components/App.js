@@ -27,13 +27,15 @@ function App() {
   const [isSignYesPopupOpen, setIsSignYesPopupOpen] = useState(false);
   const [isResultRequest, setIsResultRequest] = useState(false); // для изменения содержимого попапа реакции на запрос регистрации/логина
 
+
   useEffect(() => {
     if (loggedIn) {
       //проверка чтобы запросы не выполнялись, когда пользователь не вошел
+      
       newApi
         .getUserInfo()
         .then((res) => {
-          setCurrentUser(res);
+          setCurrentUser(res.data);
         })
         .catch((err) => {
           console.log(`Ошибка: ${err}`);
@@ -47,7 +49,7 @@ function App() {
       newApi
         .getInitialCards()
         .then((res) => {
-          setCards(res);
+          setCards(res.data.reverse()); //пр15
         })
         .catch((err) => {
           console.log(`Ошибка: ${err}`);
@@ -86,14 +88,14 @@ function App() {
 
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some(i => i === currentUser._id); // пр 15
 
     // Отправляем запрос в API и получаем обновлённые данные карточки
     newApi
       .changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {
         setCards((state) =>
-          state.map((c) => (c._id === card._id ? newCard : c))
+          state.map((c) => (c._id === card._id ? newCard.data : c)) // пр 15
         );
       })
       .catch((err) => {
@@ -127,7 +129,7 @@ function App() {
     newApi
       .editUserProfile(data)
       .then((res) => {
-        setCurrentUser(res);
+        setCurrentUser(res.data);
         closeAllPopups();
       })
       .catch((err) => {
@@ -143,7 +145,7 @@ function App() {
     newApi
       .editProfileAvatar(data)
       .then((res) => {
-        setCurrentUser(res);
+        setCurrentUser(res.data);
         closeAllPopups();
       })
       .catch((err) => {
@@ -159,7 +161,8 @@ function App() {
     newApi
       .addNewCard(data)
       .then((newCard) => {
-        setCards([newCard, ...cards]);
+        // console.log(newCard.data);
+        setCards([newCard.data, ...cards]);
         closeAllPopups();
       })
       .catch((err) => {
@@ -215,6 +218,7 @@ function App() {
             setLoggedIn(true); // то тогда пропускаем пользователя
             history.push("/"); // это чтобы мы сразу попадали на главную
             setEmail(res.data.email); // это чтобы появлялся емайл в хэдере
+
           }
         })
         .catch((err) => {
@@ -270,7 +274,7 @@ function App() {
     setLoggedIn(false);
     history.push("/sign-in");
   }
-
+  // console.log(cards);
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="root">

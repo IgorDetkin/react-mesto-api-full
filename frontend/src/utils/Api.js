@@ -6,7 +6,7 @@ class Api {
     this._headers = options.headers;
   }
 
-  _getToken = () => localStorage.getItem('jwt');
+  // _getToken = () => localStorage.getItem('jwt');
 
   _checkResponse(res) {
     if (res.ok) {
@@ -17,23 +17,33 @@ class Api {
 
   //Загрузка информации о пользователе с сервера
   getUserInfo() {
+    
     return fetch(`${this._baseUrl}/users/me`, {
-      credentials:'include',
-      headers: this._headers,
+      headers: {   
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        "Content-Type": "application/json",
+      },
+      // headers: this._headers,
     }).then(this._checkResponse);
   }
 
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
-      credentials:'include',
-      headers: this._headers,
+      headers: {   
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        "Content-Type": "application/json",
+      },
+      // headers: this._headers,
     }).then(this._checkResponse);
   }
 
   editUserProfile(data) {
     return fetch(`${this._baseUrl}/users/me`, {
-      credentials:'include',
-      headers: this._headers,
+      headers: {   
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        "Content-Type": "application/json",
+      },
+      // headers: this._headers,
       method: "PATCH",
       body: JSON.stringify({
         name: data.name,
@@ -44,8 +54,11 @@ class Api {
 
   addNewCard(data) {
     return fetch(`${this._baseUrl}/cards`, {
-      credentials:'include',
-      headers: this._headers,
+      headers: {   
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        "Content-Type": "application/json",
+      },
+      // headers: this._headers,
       method: "POST",
       body: JSON.stringify({
         name: data.name,
@@ -56,8 +69,11 @@ class Api {
 
   deleteCard(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}`, {
-      credentials:'include',
-      headers: this._headers,
+      headers: {   
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        "Content-Type": "application/json",
+      },
+      // headers: this._headers,
       method: "DELETE",
     }).then(this._checkResponse);
   }
@@ -72,25 +88,34 @@ class Api {
 
   likeCard(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
-      credentials:'include',
-      headers: this._headers,
+      headers: {   
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        "Content-Type": "application/json",
+      },
+      // headers: this._headers,
       method: "PUT",
     }).then(this._checkResponse);
   }
 
   deleteLikeCard(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
-      credentials:'include',
-      headers: this._headers,
+      headers: {   
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        "Content-Type": "application/json",
+      },
+      // headers: this._headers,
       method: "DELETE",
     }).then(this._checkResponse);
   }
 
   editProfileAvatar(data) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
-      credentials:'include',
       method: "PATCH",
-      headers: this._headers,
+      headers: {   
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        "Content-Type": "application/json",
+      },
+      // headers: this._headers,
       body: JSON.stringify({
         avatar: data.avatar,
       }),
@@ -100,13 +125,18 @@ class Api {
   // другие методы работы с API
 }
 
+
 const newApi = new Api({
+
   // baseUrl: "https://mesto.nomoreparties.co/v1/cohort-45",
   baseUrl: "https://api.mesto.learnproject.nomoredomains.icu",
   // baseUrl: "http://localhost:3000",
-  headers: {
+  // headers: {
     // authorization: "12ba528d-ad1d-413e-9351-d51fd8b2894d",
-    // "Authorization": `Bearer ${this._getToken}`,
+    // "Content-Type": "application/json",
+  // },
+  headers: {   
+    authorization: `Bearer ${localStorage.getItem('jwt')}`,
     "Content-Type": "application/json",
   },
 });

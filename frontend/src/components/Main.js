@@ -6,7 +6,7 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 function Main(props) {
   // const [cards, setCards] = useState([]);
   const currentUser = React.useContext(CurrentUserContext);
-
+  // console.log(props.cards);
   return (
     <main className="content">
       <section className="profile">
