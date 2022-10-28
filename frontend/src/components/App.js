@@ -35,7 +35,7 @@ function App() {
       newApi
         .getUserInfo()
         .then((res) => {
-          setCurrentUser(res.data);
+          setCurrentUser(res.data);    
         })
         .catch((err) => {
           console.log(`Ошибка: ${err}`);

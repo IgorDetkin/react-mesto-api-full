@@ -1,12 +1,9 @@
-
-
 class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
     this._headers = options.headers;
   }
 
-  // _getToken = () => localStorage.getItem('jwt');
 
   _checkResponse(res) {
     if (res.ok) {
