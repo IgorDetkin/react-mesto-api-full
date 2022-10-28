@@ -1,11 +1,5 @@
-// const path = require('path');
-// require('dotenv').config({ path: path.join(__dirname, '.env') }); // ??????
-// require('dotenv').config({ path: path.join(__dirname, '.env') });
-// require('dotenv').config({ path: '/home/devopsina/.env' });
-// require('dotenv').config({ path: './middlewares/.env' });
 require('dotenv').config();
 const express = require('express');
-// const corslibrary = require('cors');
 
 const app = express();
 const mongoose = require('mongoose');
@@ -16,10 +10,6 @@ const auth = require('./middlewares/auth');
 const NotFoundError = require('./middlewares/errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/Logger');
 const { cors } = require('./middlewares/cors');
-
-// console.log(process.env.NODE_ENV); // production
-// console.log(process.env.JWT_SECRET);
-// console.log(require('dotenv').config());
 
 const { PORT = 3000 } = process.env;
 
@@ -100,43 +90,4 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
 
-// ssh devopsina@84.201.129.148
-
-// pm2 kill # Полностью отключает текущий PM2 и запущенные приложения
-// pm2 start app.js # Запускает приложение
-// mesto.learnproject.nomoredomains.icu
-
-// scp -r ./build/* devopsina@84.201.129.148:/home/devopsina/mesto-react
-
-// /home/devopsina/frontendtest/react-mesto-auth/mesto-react/build
-
-// root /home/devopsina/mesto-react;
-
-// server {
-//   listen 80;
-
-//   server_name api.mesto.learnproject.nomoredomains.icu;
-
-//   location / {
-//             proxy_pass http://localhost:3000;
-//             proxy_http_version 1.1;
-//             proxy_set_header Upgrade $http_upgrade;
-//             proxy_set_header Connection 'upgrade';
-//             proxy_set_header Host $host;
-//             proxy_cache_bypass $http_upgrade;
-//   }
-// }
-
-// server {
-//   listen 80;
-
-//   server_name mesto.learnproject.nomoredomains.icu;
-
-//   root /home/devopsina/mesto-react;
-
-//   location / {
-//   #Тут будут настройки фронта
-//    }
-// }
-
-// chmod +x /home/devopsina/react-mesto-api-full/frontend/build
+// адрес удаленного сервера ssh devopsina@84.201.129.148

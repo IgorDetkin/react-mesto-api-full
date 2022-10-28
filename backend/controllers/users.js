@@ -69,10 +69,6 @@ module.exports.getUserInfo = (req, res, next) => {
       res.send({ data: user });
     })
     .catch((err) => {
-      // if (err.name === 'CastError') {
-      //   next(new ValidationError('Переданы некорректные данные'));
-      //   return;
-      // }
       next(err);
     });
 };
