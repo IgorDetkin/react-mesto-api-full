@@ -29,19 +29,6 @@ function App() {
 
 
   useEffect(() => {
-    auth.getInfo()
-      .then((res) => {
-        setLoggedIn(true);
-        setEmail(res.data.email);
-        history.push("/");
-      })
-      .catch((err) => {
-        history.push("/sign-in");
-        console.log(err)
-      });
-  }, [history])
-
-  useEffect(() => {
     if (loggedIn) {
       //проверка чтобы запросы не выполнялись, когда пользователь не вошел
       
