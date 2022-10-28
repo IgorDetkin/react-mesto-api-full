@@ -260,6 +260,13 @@ function App() {
           localStorage.setItem("jwt", res.token); //сохранение данных
           history.push("/");
           setEmail(email);
+          newApi.getUserInfo() //пр15
+            .then((res) => {
+              setCurrentUser(res.data);
+            })
+            .catch((err) => {
+              console.log(`Ошибка: ${err}`);
+            });
         }
       })
       .catch((err) => {
