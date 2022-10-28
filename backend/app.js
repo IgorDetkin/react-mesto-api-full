@@ -3,7 +3,7 @@ const path = require('path');
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 require('dotenv').config({ path: '/home/devopsina/.env' });
 // require('dotenv').config({ path: './middlewares/.env' });
-// require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 // const corslibrary = require('cors');
 
