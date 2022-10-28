@@ -3,7 +3,7 @@
 // require('dotenv').config({ path: path.join(__dirname, '.env') });
 // require('dotenv').config({ path: '/home/devopsina/.env' });
 // require('dotenv').config({ path: './middlewares/.env' });
-// require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 // const corslibrary = require('cors');
 
@@ -17,8 +17,9 @@ const NotFoundError = require('./middlewares/errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/Logger');
 const { cors } = require('./middlewares/cors');
 
-console.log(process.env.NODE_ENV); // production
-console.log(process.env.JWT_SECRET);
+// console.log(process.env.NODE_ENV); // production
+// console.log(process.env.JWT_SECRET);
+// console.log(require('dotenv').config());
 
 const { PORT = 3000 } = process.env;
 
@@ -34,6 +35,12 @@ const regex = /(https?:\/\/)(www\.)?\S{2,}\.\S{2,}?/;
 app.use(cors);
 
 app.use(requestLogger);
+
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 
 app.post(
   '/signup',
