@@ -1,10 +1,11 @@
 const path = require('path');
 // require('dotenv').config({ path: path.join(__dirname, '.env') }); // ??????
 require('dotenv').config({ path: path.join(__dirname, '.env') });
-// require('dotenv').config({ path: '/home/devopsina/.env' });
+require('dotenv').config({ path: '/home/devopsina/.env' });
 // require('dotenv').config({ path: './middlewares/.env' });
 // require('dotenv').config();
 const express = require('express');
+const corslibrary = require('cors');
 
 const app = express();
 const mongoose = require('mongoose');
@@ -14,7 +15,7 @@ const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const NotFoundError = require('./middlewares/errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/Logger');
-const { cors } = require('./middlewares/cors');
+// const { cors } = require('./middlewares/cors');
 
 console.log(process.env.NODE_ENV); // production
 console.log(process.env.JWT_SECRET);
@@ -30,7 +31,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 
 const regex = /(https?:\/\/)(www\.)?\S{2,}\.\S{2,}?/;
 
-app.use(cors);
+app.use(corslibrary);
 
 app.use(requestLogger);
 
