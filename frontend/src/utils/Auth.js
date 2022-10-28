@@ -30,7 +30,8 @@ export const authorize = ({email, password}) => {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
       },
       body: JSON.stringify({
         email, password

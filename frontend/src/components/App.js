@@ -260,6 +260,7 @@ function App() {
           localStorage.setItem("jwt", res.token); //сохранение данных
           history.push("/");
           setEmail(email);
+          // setCurrentUser(res.data);
         }
       })
       .catch((err) => {
@@ -273,6 +274,7 @@ function App() {
     localStorage.removeItem("jwt"); //удалить токен
     setLoggedIn(false);
     history.push("/sign-in");
+    setCurrentUser({currentUser});
   }
   // console.log(cards);
   return (
