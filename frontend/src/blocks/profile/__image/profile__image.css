@@ -4,5 +4,6 @@
   height: 120px;
   position: relative;
   border-radius: 100px;
+  object-fit: cover;
 }
 

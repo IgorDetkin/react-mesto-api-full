@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import responseYes from "../images/ok.svg";
 import responseNo from "../images/fail.svg";
 

@@ -4,6 +4,7 @@
     height: 50px;
     background: #FFFFFF;
     border-radius: 2px;
+    border: none;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -11,4 +12,15 @@
     line-height: 22px;
     text-align: center;
     color: #000000;
+    outline: none;
+}
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+    .sign__app{
+        width: 264px;
+        height: 46px;
+        border-radius: 4px;
+        font-size: 16px;
+        line-height: 20px;
+    }
 }

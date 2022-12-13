@@ -235,19 +235,28 @@ function App() {
     }
   }, []);
 
+
+
+  
+  
+
+
   function handleRegister({ email, password }) {
     return auth
       .register({ email, password }) //из auth.js
       .then(() => {
         setIsSignYesPopupOpen(true);
         setIsResultRequest(true);
-        setLoggedIn(true);
+        setTimeout(() => setIsSignYesPopupOpen(false), 2000);
+
+        // setLoggedIn(true);
         history.push("/sign-in");
       })
       .catch((err) => {
         console.log(err);
         setIsSignYesPopupOpen(true);
         setIsResultRequest(false);
+        setTimeout(() => setIsSignYesPopupOpen(false), 2500);
       });
   }
 
@@ -273,6 +282,7 @@ function App() {
         console.log(err);
         setIsSignYesPopupOpen(true);
         setIsResultRequest(false);
+        setTimeout(() => setIsSignYesPopupOpen(false), 2500);
       });
   }
 
