@@ -60,6 +60,8 @@
 в котором находится исходный код обоих частей.
 
 
-* [MESTO](https://mesto.learnproject.nomoredomains.icu) - по этой ссылке можете ознакомиться с сервисом Mesto.  
+## [MESTO](https://mesto.learnproject.nomoredomains.icu)  
+по этой ссылке можете ознакомиться с сервисом Mesto.  
+
 
 [адрес бэкенда](https://api.mesto.learnproject.nomoredomains.icu)
