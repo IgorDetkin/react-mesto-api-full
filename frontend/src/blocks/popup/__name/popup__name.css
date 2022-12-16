@@ -1,5 +1,5 @@
 .popup__name {
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   width: 100%;
   padding: 0 0 12px;
   font-family: 'Inter', 'Arial', sans-serif;
@@ -11,7 +11,41 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+/* 
+.popup__name:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+} */
 
 .popup__name:focus {
   outline: none;
 }
+
+
+.popup__name-file {
+  width: 20px;
+  height: 30px;
+  /* padding:  10px 0 0px; */
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.2); */
+  /* visibility: hidden; */
+  opacity: 0;
+  /* position: absolute; */
+}
+
+.popup__input-icon {
+  position: relative;
+  box-sizing:border-box;
+  background-image: url(../../../images/upload-svgrepo-com.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* padding: 0 0 17px; */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+
+.popup__link-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+

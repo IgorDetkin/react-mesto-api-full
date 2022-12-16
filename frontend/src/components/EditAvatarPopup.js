@@ -33,7 +33,8 @@ function EditAvatarPopup(props) {
         <input
           name="avatarLink"
           id="avatar"
-          type="url"
+          type={"url"}
+          // onChange={props.uploadHandler}
           placeholder="Ссылка на фото пользователя"
           // value={""}
           // onChange={handleChangeAvatar}
@@ -45,6 +46,7 @@ function EditAvatarPopup(props) {
           Необходимо заполнить данное поле
         </span>
       </label>
+      {/* <input type="file"/> */}
     </PopupWithForm>
   );
 }

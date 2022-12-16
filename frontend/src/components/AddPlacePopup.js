@@ -8,13 +8,30 @@ function AddPlacePopup(props) {
   const [name, setName] = useState({});
   const [link, setLink] = useState({});
 
+
   function handleChangeName(e) {
     setName(e.target.value);
   }
 
   function handleChangeLink(e) {
+    console.log(e.target.value);
     setLink(e.target.value);
   }
+
+
+  // для добавления возможности добавления картинки с компьютера
+  // function handleUploadLink(e) {
+  //   console.log(e.target.files);
+  //   setLink(URL.createObjectURL(e.target.files[0]));
+  // }
+
+ 
+
+ 
+
+
+  
+
 
   // Подписка на контекст
   const currentUser = React.useContext(CurrentUserContext);
@@ -57,20 +74,55 @@ function AddPlacePopup(props) {
       </label>
 
       <label className="popup__form-field">
+        <div className="popup__link-wrapper">
+          <input
+            name="link"
+            id="cardlink"
+            type="url"
+            placeholder="Ссылка на картинку"
+            value={link || ""}
+            onChange={handleChangeLink}
+            className="popup__name popup__name_input_link"
+            required
+          />
+          
+          {/* <div className="popup__input-icon">
+            <input
+              name="link"
+              id="cardupload"
+              type={"file"}
+              placeholder="Ссылка на картинку"
+              value={""}
+              onChange={handleUploadLink}
+              className="popup__name-file popup__name_input_link"
+              // required
+            />
+          </div> */}
+        </div>
+
+
+        
+        <span className="cardlink-error popup__name-error">
+          Необходимо заполнить данное поле
+        </span> 
+
+      </label>
+
+
+
+      {/* <label className="popup__form-field">
         <input
           name="link"
           id="cardlink"
-          type="url"
+          type={"file"}
           placeholder="Ссылка на картинку"
-          value={link || ""}
-          onChange={handleChangeLink}
-          className="popup__name popup__name_input_link"
-          required
+          value={""}
+          onChange={handleUploadLink}
+          // className="popup__name popup__name_input_link"
+          className="popup__name-file popup__name_input_link"
+          // required
         />
-        <span className="cardlink-error popup__name-error">
-          Необходимо заполнить данное поле
-        </span>
-      </label>
+      </label> */}
     </PopupWithForm>
   );
 }

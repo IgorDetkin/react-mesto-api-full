@@ -140,6 +140,14 @@ function App() {
       });
   }
 
+
+
+
+  //аватар
+  
+
+
+
   function handleUpdateAvatar(data) {
     setIsLoading(true);
     newApi
@@ -155,6 +163,19 @@ function App() {
         setIsLoading(false);
       });
   }
+
+  // const [file, setFile] = useState();
+  // const uploadHandler = (event) => {
+  //   console.log(event.target.files);
+  //   setFile(event.target.files[0]);
+    
+  // }
+
+  //аватар
+
+
+
+  
 
   function handleAddPlaceSubmit(data) {
     setIsLoading(true);
@@ -329,6 +350,7 @@ function App() {
             onClose={closeAllPopups}
             onUpdateAvatar={handleUpdateAvatar}
             buttonTitle={isLoading ? "Обновление..." : "Обновить"}
+            // uploadHandler={uploadHandler}
           />
           <EditProfilePopup
             isOpen={isEditProfilePopupOpen}
@@ -341,6 +363,8 @@ function App() {
             onClose={closeAllPopups}
             onAddPlace={handleAddPlaceSubmit}
             buttonTitle={isLoading ? "Создание..." : "Создать"}
+
+            // uploadHandler={uploadHandler}
           />
           <DeleteCardPopup
             isOpen={isDeleteCardPopupOpen}
