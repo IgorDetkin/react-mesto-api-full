@@ -1,4 +1,4 @@
-# 📷 Cервис для публикации фотографий "Mesto"
+# 📷 Cервис для публикации фотографий "[mesto](https://mesto.learnproject.nomoredomains.icu)"
 
 ### Что это?
 
@@ -60,8 +60,6 @@
 в котором находится исходный код обоих частей.
 
 
-## [MESTO](https://mesto.learnproject.nomoredomains.icu)  
-по этой ссылке можете ознакомиться с сервисом Mesto.  
-
+[mesto](https://mesto.learnproject.nomoredomains.icu)
 
 [адрес бэкенда](https://api.mesto.learnproject.nomoredomains.icu)
