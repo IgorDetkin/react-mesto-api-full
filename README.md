@@ -56,9 +56,10 @@
 Проект доступен для трех разных резрешений экрана устройств.  
 
 
-[react-mesto-api-full](https://github.com/IgorDetkin/react-mesto-api-full) - Общий репозиторий  
-для всего приложения, в котором находится исходный код обоих частей.
+[react-mesto-api-full](https://github.com/IgorDetkin/react-mesto-api-full) - Общий репозиторий для всего приложения,  
+в котором находится исходный код обоих частей.
 
 
-* [MESTO](https://mesto.learnproject.nomoredomains.icu)
-  [адрес бэкенда](https://api.mesto.learnproject.nomoredomains.icu)
+* [MESTO](https://mesto.learnproject.nomoredomains.icu) - по этой ссылке можете ознакомиться с сервисом Mesto.  
+
+[адрес бэкенда](https://api.mesto.learnproject.nomoredomains.icu)
