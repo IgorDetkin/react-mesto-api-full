@@ -1,4 +1,4 @@
-# 📷 Cервис для публикации фотографий "[mesto](https://mesto.learnproject.nomoredomains.icu)"
+# 📷 Cервис для публикации фотографий [Mesto](https://mesto.learnproject.nomoredomains.icu)
 
 ### Что это?
 
@@ -61,5 +61,4 @@
 
 
 [mesto](https://mesto.learnproject.nomoredomains.icu)
-
 [адрес бэкенда](https://api.mesto.learnproject.nomoredomains.icu)
