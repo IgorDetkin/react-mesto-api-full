@@ -60,5 +60,5 @@
 в котором находится исходный код обоих частей.
 
 
-[mesto](https://mesto.learnproject.nomoredomains.icu)
+[mesto](https://mesto.learnproject.nomoredomains.icu)  
 [адрес бэкенда](https://api.mesto.learnproject.nomoredomains.icu)
