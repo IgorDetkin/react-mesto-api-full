@@ -303,7 +303,7 @@ function App() {
         console.log(err);
         setIsSignYesPopupOpen(true);
         setIsResultRequest(false);
-        setTimeout(() => setIsSignYesPopupOpen(false), 2500);
+        // setTimeout(() => setIsSignYesPopupOpen(false), 2500);
       });
   }
 

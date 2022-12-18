@@ -40,3 +40,16 @@
   text-align: center;
   color: #000000;
   }
+
+  @media all and (min-width: 320px) and (max-width: 767px) {
+    .popup__sign-image {
+      margin: 60px 81px 32px;
+    }
+
+    .popup__title-result {
+      margin: 0 0 60px;
+      font-size: 20px;
+      width: 282px;
+      line-height: 25px;
+    }
+  }
