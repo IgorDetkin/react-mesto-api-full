@@ -17,9 +17,9 @@ opacity: 1;
 background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* .profile__image-hover:focus {
+.profile__image-hover:focus {
   opacity: 0;
-} */
+}
 
 /* .profile__image-hover:active {
   opacity: 0;
