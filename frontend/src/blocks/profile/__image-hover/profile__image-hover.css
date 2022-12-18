@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-size: 26px;
   background-position: center;
-  z-index: 2;
+  z-index: 1;
 }
 
 
@@ -16,3 +16,11 @@
 opacity: 1;
 background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* .profile__image-hover:focus {
+  opacity: 0;
+} */
+
+/* .profile__image-hover:active {
+  opacity: 0;
+} */
